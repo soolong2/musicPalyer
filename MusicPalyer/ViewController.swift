@@ -33,7 +33,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         guard let soundAsset = NSDataAsset(name: "sound") else {
             print("음원 파일 에셋을 가져올수없다.")
             return
-        }  
+        }
         do{
             try self.player = AVAudioPlayer(data: soundAsset.data)
             self.player.delegate = self
@@ -61,7 +61,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             
             self.updateTimeLabelText(time: self.player.currentTime)
             self.progressSlider.value = Float(self.player.currentTime)
-            })
+        })
         self.timer.fire()
     }
     //타이머해제 매소드
